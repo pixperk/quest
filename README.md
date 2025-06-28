@@ -142,7 +142,7 @@ Headers:
   - 🔴 **DELETE** - Remove resource
   - 🟣 **PATCH** - Partial update
   - ⚪ **HEAD** - Headers only
-  - ⚫ **OPTIONS** - Available methods
+
 
 ### Headers Tab
 - Add custom headers like `Authorization`, `Content-Type`, etc.

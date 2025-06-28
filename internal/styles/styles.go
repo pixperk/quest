@@ -87,13 +87,12 @@ var (
 )
 
 var MethodColors = map[string]lipgloss.Color{
-	"GET":     Green,
-	"POST":    Blue,
-	"PUT":     Yellow,
-	"DELETE":  Red,
-	"PATCH":   Purple,
-	"HEAD":    LightGray,
-	"OPTIONS": DarkGray,
+	"GET":    Green,
+	"POST":   Blue,
+	"PUT":    Yellow,
+	"DELETE": Red,
+	"PATCH":  Purple,
+	"HEAD":   LightGray,
 }
 
 func StatusCodeColor(code int) lipgloss.Color {

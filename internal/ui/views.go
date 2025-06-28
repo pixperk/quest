@@ -45,7 +45,7 @@ func (m Model) renderURLTab() string {
 	methodSection := styles.HeaderStyle.Render("HTTP Method") + "\n"
 
 	var methodButtons []string
-	methods := []string{"GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"}
+	methods := []string{"GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"}
 	selectedMethod := m.getSelectedMethod()
 
 	for _, method := range methods {
