@@ -16,6 +16,7 @@ import (
 
 	"github.com/pixperk/quest/internal/http"
 	"github.com/pixperk/quest/internal/styles"
+	"github.com/pixperk/quest/internal/syntax"
 )
 
 func NewModel() Model {
@@ -80,6 +81,7 @@ func NewModel() Model {
 		headersViewport:   viewport,
 		help:              help,
 		spinner:           s,
+		highlighter:       syntax.NewHighlighter(),
 		activeTab:         URLTab,
 		responseSubTab:    ResponseBodySubTab,
 		focused:           0,
@@ -162,6 +164,7 @@ func (m Model) sendRequest() (Model, tea.Cmd) {
 				StatusCode:   resp.StatusCode,
 				Headers:      resp.Headers,
 				Body:         resp.Body,
+				ContentType:  resp.ContentType,
 				ResponseTime: resp.ResponseTime,
 				Error:        resp.Error,
 			}

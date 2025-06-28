@@ -12,6 +12,7 @@ import (
 	"github.com/charmbracelet/bubbles/viewport"
 
 	"github.com/pixperk/quest/internal/http"
+	"github.com/pixperk/quest/internal/syntax"
 )
 
 type Tab int
@@ -65,19 +66,21 @@ type Model struct {
 	headersViewport  viewport.Model
 	help             help.Model
 	spinner          spinner.Model
+	highlighter      *syntax.Highlighter
 
-	activeTab         Tab
-	responseSubTab    ResponseSubTab
-	focused           int
-	loading           bool
-	response          string
-	statusCode        int
-	responseTime      time.Duration
-	responseHeaders   map[string]string
-	requestHeaders    map[string]string
-	httpClient        *http.Client
-	showingLoadDialog bool
-	savedRequests     []SavedRequest
+	activeTab           Tab
+	responseSubTab      ResponseSubTab
+	focused             int
+	loading             bool
+	response            string
+	responseContentType string
+	statusCode          int
+	responseTime        time.Duration
+	responseHeaders     map[string]string
+	requestHeaders      map[string]string
+	httpClient          *http.Client
+	showingLoadDialog   bool
+	savedRequests       []SavedRequest
 
 	keys KeyMap
 }

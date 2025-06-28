@@ -123,7 +123,13 @@ func (m Model) renderBodyTab() string {
 
 // renderResponseTab renders the response display tab
 func (m Model) renderResponseTab() string {
-	responseSection := styles.HeaderStyle.Render("Response") + "\n"
+	responseSection := styles.HeaderStyle.Render("Response")
+
+	// Add content type indicator if available
+	if m.responseContentType != "" {
+		responseSection += " " + styles.HelpStyle.Render("("+m.responseContentType+")")
+	}
+	responseSection += "\n"
 
 	if m.loading {
 		return responseSection + m.spinner.View() + " " +

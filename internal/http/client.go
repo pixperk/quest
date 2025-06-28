@@ -22,6 +22,7 @@ type Response struct {
 	StatusCode   int
 	Headers      map[string]string
 	Body         string
+	ContentType  string
 	ResponseTime time.Duration
 	Error        error
 }
@@ -83,10 +84,14 @@ func (c *Client) SendRequest(req Request) Response {
 		headers[key] = strings.Join(values, ", ")
 	}
 
+	// Get content type
+	contentType := resp.Header.Get("Content-Type")
+
 	return Response{
 		StatusCode:   resp.StatusCode,
 		Headers:      headers,
 		Body:         string(body),
+		ContentType:  contentType,
 		ResponseTime: time.Since(start),
 	}
 }

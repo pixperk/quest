@@ -152,11 +152,12 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.statusCode = msg.StatusCode
 		m.responseTime = msg.ResponseTime
 		m.responseHeaders = msg.Headers
+		m.responseContentType = msg.ContentType
 
 		if msg.Error != nil {
 			m.response = styles.ErrorStyle.Render("Error: " + msg.Error.Error())
 		} else {
-			m.response = msg.Body
+			m.response = m.highlighter.Highlight(msg.Body, msg.ContentType)
 		}
 
 		m.responseViewport.SetContent(m.response)
