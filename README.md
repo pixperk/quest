@@ -61,10 +61,7 @@ quest.exe      # On Windows
 ```
 
 ### Quick Install (one-liner)
-
-> [!INFO]  
-> This will download the source code and build quest, not add it to your PATH
-
+This will download the source code and build quest, not add it to your PATH
 ```bash
 git clone https://github.com/pixperk/quest.git && cd quest && go build -o quest . && ./quest
 ```
