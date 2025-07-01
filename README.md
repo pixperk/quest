@@ -29,8 +29,7 @@ A beautiful, modular terminal-based HTTP client built with Go, Bubble Tea, and C
 - Go 1.23+ installed on your system
 - A terminal that supports ANSI colors
 
-### Via Go driectly
-
+### Simple install (via Go driectly)
 To install **quest** simply run:
 ```bash
 go install github.com/pixperk/quest@latest
@@ -62,6 +61,10 @@ quest.exe      # On Windows
 ```
 
 ### Quick Install (one-liner)
+
+> [!INFO]  
+> This will download the source code and build quest, not add it to your PATH
+
 ```bash
 git clone https://github.com/pixperk/quest.git && cd quest && go build -o quest . && ./quest
 ```
