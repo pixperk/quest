@@ -29,6 +29,14 @@ A beautiful, modular terminal-based HTTP client built with Go, Bubble Tea, and C
 - Go 1.23+ installed on your system
 - A terminal that supports ANSI colors
 
+### Via Go driectly
+
+To install **quest** simply run:
+```bash
+go install github.com/pixperk/quest@latest
+```
+This will install the binary into your GOBIN (linux/macOS: $GOBIN, windows: %GOBIN%) which in most cases already is in your path.
+
 ### Build from Source
 
 1. Clone the repository:
